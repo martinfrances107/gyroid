@@ -17,22 +17,31 @@
 //!  ]
 //!]
 
+use std::f64::consts::PI;
+use std::f64::consts::TAU;
+
 fn main() {
     // box side length
-    let len = 1_000u32;
+    let N = 1_00u32;
+    let MAX = N as f64;
 
     let mut points = Vec::<[u32; 3]>::new();
 
     // JSON format
     // Wrap point in []
     println!("[");
-    let r2 = len * len;
-    let shell = r2..r2 + 1;
-    for k in 0..len {
-        for j in 0..len {
-            for i in 0..len {
-                let mag = i * i + j * j + k * k;
-                if shell.contains(&mag) {
+    let delta = 0..1;
+    for k in 0..N {
+        for j in 0..N {
+            for i in 0..N {
+                // transform in to space -PI to PI;
+                let x = TAU * i as f64 / MAX - PI;
+                let y = TAU * j as f64 / MAX - PI;
+                let z = TAU * k as f64 / MAX - PI;
+
+                let f = x.sin() * y.cos() + y.sin() * z.cos() + z.sin() * x.cos();
+                // if delta.contains(&f) {
+                if f.abs() < 0.01_f64 {
                     // current cell is on the surface.
                     points.push([i, j, k]);
                 }
