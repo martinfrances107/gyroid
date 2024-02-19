@@ -6,11 +6,13 @@ A gyroid is a tripperly period minimal surface.
 
 It has a approximate definition :-
 
-$ f  = sin(x) * cos(y) + sin(y) * cos(z) + sin(z) * cos(x) = 0 $
+f  = sin(x) * cos(y) + sin(y) * cos(z) + sin(z) * cos(x) = 0
 
 where
 
-$-π < x < π, -π < y < π, -π < z < π$
+-π < x < π, -π < y < π, -π < z < π
+
+[Wikipedia reference](https://en.wikipedia.org/wiki/Gyroid)
 
 This rust binary generates a point cloud [ points on the surface.]
 
