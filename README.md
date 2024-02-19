@@ -1,5 +1,7 @@
 # GYROID
 
+![Gytoid](./images/gyroid.webp)
+
 A gyroid is a tripperly period minimal surface.
 
 It has a approximate definition :-
