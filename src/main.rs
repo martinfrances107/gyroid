@@ -22,27 +22,27 @@ use std::f64::consts::TAU;
 
 fn main() {
     // box side length
-    let N = 1_00u32;
-    let MAX = N as f64;
+    const N: u32 = 1_000u32;
+    const MAX: f64 = N as f64;
 
     let mut points = Vec::<[u32; 3]>::new();
 
     // JSON format
     // Wrap point in []
     println!("[");
+
     let delta = 0..1;
     for k in 0..N {
+        let z = TAU * k as f64 / MAX - PI;
         for j in 0..N {
+            let y = TAU * j as f64 / MAX - PI;
             for i in 0..N {
                 // transform in to space -PI to PI;
                 let x = TAU * i as f64 / MAX - PI;
-                let y = TAU * j as f64 / MAX - PI;
-                let z = TAU * k as f64 / MAX - PI;
 
                 let f = x.sin() * y.cos() + y.sin() * z.cos() + z.sin() * x.cos();
-                // if delta.contains(&f) {
-                if f.abs() < 0.01_f64 {
-                    // current cell is on the surface.
+                if f.abs() < 0.001_f64 {
+                    // Current cell is on the surface.
                     points.push([i, j, k]);
                 }
             }
