@@ -41,7 +41,7 @@ fn main() {
                 let x = TAU * i as f64 / MAX - PI;
 
                 let f = x.sin() * y.cos() + y.sin() * z.cos() + z.sin() * x.cos();
-                if f.abs() < 0.001_f64 {
+                if f.abs() < 0.0001_f64 {
                     // Current cell is on the surface.
                     points.push([i, j, k]);
                 }
