@@ -11,9 +11,9 @@
 //!    3.0
 //!  ],
 //!  [
-//!    1.0,
-//!    2.0,
-//!    3.0
+//!    5.0,
+//!    6.0,
+//!    7.0
 //!  ]
 //!]
 
@@ -22,7 +22,7 @@ use std::f64::consts::TAU;
 
 fn main() {
     // box side length
-    const N: u32 = 1_000u32;
+    const N: u32 = 1_500u32;
     const MAX: f64 = N as f64;
 
     let mut points = Vec::<[u32; 3]>::new();
@@ -52,21 +52,11 @@ fn main() {
     let mut iter = points.iter();
     // first point
     if let Some(first) = iter.next() {
-        print!(
-            "[{}, {}, {}]",
-            first[0] as f64 / 100_f64,
-            first[1] as f64 / 100_f64,
-            first[2] as f64 / 100_f64
-        );
+        print!("[{}, {}, {}]", first[0], first[1], first[2]);
 
         for p in iter {
             println!(",");
-            print!(
-                "[ {}, {}, {}]",
-                p[0] as f64 / 100_f64,
-                p[1] as f64 / 100_f64,
-                p[2] as f64 / 100_f64
-            );
+            print!("[ {}, {}, {}]", p[0], p[1], p[2]);
         }
     }
 
