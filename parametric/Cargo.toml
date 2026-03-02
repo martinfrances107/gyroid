@@ -1,0 +1,17 @@
+[package]
+name = "parametric"
+authors.workspace = true
+categories.workspace = true
+edition.workspace = true
+keywords.workspace = true
+license.workspace = true
+readme.workspace = true
+repository.workspace = true
+version.workspace = true
+rust-version.workspace = true
+
+
+[dependencies]
+glam = "0.32.0"
+approx="0.5.1"
+nrfind="1.0.3"
